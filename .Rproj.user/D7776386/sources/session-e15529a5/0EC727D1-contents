@@ -1,0 +1,48 @@
+---
+title: "Hypopo"
+subtitle: "Creating presentations with Quarto! {{< iconify simple-icons:quarto >}}"
+author: "Ruben C. Kubina"
+format: 
+  revealjs:
+    logo: images/Logo-INRAE_Transparent.png
+    footer: "Ruben C. Kubina - 11.07.2024"
+    theme: mytheme.scss
+    slide-number: true
+    controls: true
+    output-file: index.html
+    chalkboard: true
+    code-line-numbers: false
+lightbox: auto
+self-contained: false
+embed-resources: false
+---
+
+## What is Quarto {{< iconify wpf:ask-question >}}
+<hr>
+
+:::{style="color: #006264; font-style: italic; text-align: center;margin-bottom: 10px;"}
+"Quarto is an open-source scientific and technical publishing system."
+:::
+
+<hr>
+
+:::{style="font-size: 30px;" .incremental}
+
+  * Create presentations, websites, blogs, reports and more!
+    * reproducible and the option for automatically generating
+  
+  * Include your {{< iconify devicon:r >}} or Python {{< iconify logos:python >}} code for plots or tables
+  
+  * Share interactive content with your coworkers (or the world!)
+    * Publish with GitHub Pages or other services
+
+:::
+
+{{< include chapters/create_presentation.qmd >}}
+
+{{< include chapters/styling.qmd >}}
+
+{{< include chapters/github_pages.qmd >}}
+
+
+

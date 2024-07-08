@@ -1,0 +1,309 @@
+---
+format: revealjs
+---
+
+---
+
+##  {#creating-a-quarto-document data-menu-title="Creating a Quarto document" background="#053660"}
+
+<div class="page-center">
+<div class="custom-subtitle"> Creating a HTML presentation {{< iconify ph:presentation-fill >}}  </div>
+</div>
+
+---
+
+## Why a HTML presentation and not just PowerPoint?
+<hr>
+
+:::{style="margin-top:20px" .incremental}
+
+  * Makes it easy to share: only a link to send!
+  * Easy integration of code snippets and plots
+  * Viewable on any operating system with an internet browser
+
+:::
+
+
+## Get started
+<hr>
+
+* Quarto should be already installed in **R-Studio**. 
+
+* If not or if you want to use **VS Code**, **Jupyter** or **Text Editor** download the newest version  from the official [website](https://quarto.org/docs/get-started/).
+
+:::{style="margin-top: 55px; text-align: center;"}
+$\rightarrow$ I will focus on R-Studio
+
+:::
+
+## Create a new document
+<hr>
+
+:::: {.columns}
+
+::: {.column width="35%"}
+[In R-Studio: ]{style="font-size:30px;"}
+![](images/screenshots/new_quarto_file.jpg) 
+:::
+
+::: {.column width="65%"}
+[{{< iconify mdi:checkbox-outline >}} Check Reveal JS for HTML output]{style="font-size:30px;"}
+![](images/screenshots/new_presentation.png){width=80%}
+:::
+
+::::
+
+## Structure of a `.qmd` file {{< iconify line-md:text-box >}}
+<hr>
+
+Preamble defines format and other options for the output:
+
+::::{.r-stack}
+
+:::{}
+```{.yaml}
+---
+title: "Hypopo"
+author: "Ruben C. Kubina"
+format: revealjs
+---
+```
+:::
+
+:::{.fragment}
+```{.yaml code-line-numbers="4"}
+---
+title: "Hypopo"
+author: "Ruben C. Kubina"
+format: revealjs
+---
+```
+:::
+
+:::{.fragment}
+```{.yaml code-line-numbers="3,5,6,7,8,9"}
+---
+title: "Hypopo"
+subtitle: "Creating presentations with Quarto!"
+author: "Ruben C. Kubina"
+format: 
+  revealjs:
+    logo: images/Logo-INRAE_Transparent.png
+    footer: "Ruben C. Kubina - 11.07.2024"
+    slide-number: true
+---
+```
+:::
+
+::::
+
+## Filling the presentation {{< iconify line-md:edit >}} 
+<hr>
+
+::::{.columns}
+
+::: {.column}
+```{.markdown}
+## Title of slide 1
+
+Content of slide 1 
+
+## Title of slide 2
+
+Content of slide 2
+```
+:::
+
+::: {.column style="font-size:30px;"}
+
+* `##` indicates the begin of a new slide 
+
+* Text/content between two slides is displayed
+
+:::
+::::
+
+. . .
+
+<hr>
+
+:::{style="text-align:center;"}
+
+`*`, `-` or `+` can be used to create lists
+
+:::
+
+::::{.columns}
+
+::: {.column}
+```{.markdown}
+* Element 1 of list
+  + sub-item
+    - a sub-sub-item?
+```
+:::
+
+:::{.column style="font-size:30px;"}
+
+* Element 1 of list
+  + sub-item
+    - a sub-sub-item?
+  
+:::
+
+::::
+
+
+## Including images {{< iconify heroicons:photo >}}
+<hr>
+
+```{.markdown}
+![Logo of INRAE](images/Logo-INRAE_Transparent.png)
+```
+
+![Logo of INRAE](images/Logo-INRAE_Transparent.png){fig-align="left" width=25%}
+
+. . .
+
+```{.markdown}
+![](images/Logo-INRAE_Transparent.png){fig-align="right" width=20%}
+```
+
+![](images/Logo-INRAE_Transparent.png){fig-align="right" width=10%}
+
+. . .
+
+Caption in `[]`, relative path to figure in `()` and parameters in `{}` like `width`, `height` and [more](https://quarto.org/docs/authoring/figures.html)...
+
+## Including figures from R code {{< iconify devicon:r >}}
+<hr>
+
+Code needs to be embedded in chunks 
+
+```{{r}}
+library(ggplot2)
+x <- 1:10
+y <- cos(x)
+
+ggplot() +
+  geom_line(aes(x = x, y = y))  
+```
+
+
+
+```{r}
+#| echo: false
+#| fig-height: 2
+
+library(ggplot2)
+x <- 1:10
+y <- cos(x)
+
+ggplot() +
+  geom_line(aes(x = x, y = y))  
+
+```
+
+## Save and read a plot as RDS
+<hr>
+
+Save your plots created in your R scripts as RDS-files and read them directly in the Quarto presentation!
+
+```{.r}
+saveRDS(yourPlot, file = "yourPath/yourPlot.RDS")
+```
+
+
+```{.r style="margin-top:30px;"}
+readRDS(file = "yourPath/yourPlot.RDS")
+```
+
+. . .
+
+<hr>
+
+::::{.columns}
+
+:::{.column  width="65%" #vcenter}
+Example for a plot created during my internship:
+```{.r}
+readRDS(file = "images/map_initKGE_Loire.RDS")
+```
+:::
+
+:::{.column width="35%" }
+```{r}
+readRDS(file = "images/map_initKGE_Loire.RDS")
+```
+:::
+
+::::
+
+## Creating columns
+
+<hr>
+
+::::{.columns}
+
+:::{.column}
+```{.css}
+::::{.columns}
+
+:::{.column width="60%"}
+  *Content* of left column 
+  <!-- 60% width of the slide -->
+:::
+
+:::{.column width="40%"}
+  **Content** of right column 
+  <!-- 40% width of the slide -->
+:::
+
+::::
+```
+:::
+
+:::{.column #vcenter style="font-size:30px;"}
+* `::::` indicate div container with class `.columns`
+
+* `*Content*` is *italic* font and `**Content**` is **bold** font
+:::
+
+::::
+<hr>
+::::{.columns}
+
+:::{.column width="60%"}
+  *Content* of left column 
+  <!-- 60% width of the slide -->
+:::
+
+:::{.column width="40%"}
+  **Content** of right column 
+  <!-- 40% width of the slide -->
+:::
+
+::::
+
+## Render presentation 
+<hr>
+::::{.columns style='display: flex !important; height: 40%;'}
+
+::: {.column width="50%" style='display: flex; justify-content: center; align-items: center;'}
+![](images/screenshots/Renderbutton.png)
+:::
+
+:::{.column}
+* Render presentation directly in R-Studio
+* or run `quarto render myPresentation.qmd` in the command line
+:::
+
+::::
+
+. . . 
+
+:::{style="margin-top: 40px;"}
+Output: `index.html` and `index_files` $\rightarrow$ the presentation
+
+![](images/screenshots/render_output.png){fig-align="center"}
+:::

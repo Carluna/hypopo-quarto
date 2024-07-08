@@ -1,0 +1,59 @@
+/*-- scss:defaults --*/
+// fonts
+$font-family-sans-serif: "AvenirNextLTPro-Regular", "Avenir Next LT Pro";
+
+// colors
+//$body-bg: white !default;
+$body-color: #000 !default;
+$link-color: #006264 !default;
+$selection-bg: #00b4d8 !default;
+
+// headings
+$presentation-heading-font: "AvenirNextLTPro-Regular", "Avenir Next LT Pro";
+$presentation-heading-color: #00a3a6 !default;
+
+
+
+/*-- scss:rules --*/
+// underline under header
+
+
+hr { 
+  border: 5px solid #00a3a6;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.reveal-viewport {
+  background-repeat: no-repeat;
+  //background-image: url(ae_light.png);
+  background-position: center;
+}
+
+.subtitle{
+  color: #00a3a6;
+  font-size: 50px;
+}
+
+.page-center {
+  line-height: 700px;
+  text-align: center;
+}
+
+.custom-subtitle {
+  font-family: $font-family-sans-serif;
+  color: #00a3a6;
+  font-size: 60px;
+  left: 20px;
+}
+
+.v-center-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+#vcenter {
+  vertical-align: middle;
+}

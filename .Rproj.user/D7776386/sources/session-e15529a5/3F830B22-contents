@@ -1,0 +1,57 @@
+---
+format: revealjs
+---
+
+---
+
+##  {#styling-a-quarto-document data-menu-title="Styling a Quarto document" background="#FAC748"}
+
+<div class="page-center">
+<div class="custom-subtitle"> Styling a Quarto document {{< iconify hugeicons:paint-board >}}  </div>
+</div>
+
+---
+
+## Built-in themes
+<hr>
+
+Quarto includes 11 built-in themes: e.g. `beige`, `dark` or `moon`...
+
+</br>
+
+The theme can be selected in the preambel:
+
+```{.yaml}
+---
+title: "Hypopo"
+format:
+  revealjs: 
+    theme: dark
+---
+```
+
+## Custom themes {{< iconify line-md:cog-filled-loop >}}
+<hr>
+
+Create your own custom theme with `scss` and/or `css` rules!
+
+```{.yaml}
+---
+title: "Hypopo"
+format:
+  revealjs: 
+    theme: mytheme.scss
+---
+```
+
+```{.css filename='./mytheme.scss'}
+/*-- scss:defaults --*/
+// fonts
+$font-family-sans-serif: "AvenirNextLTPro-Regular", "Avenir Next LT Pro";
+// headings
+$presentation-heading-font: "AvenirNextLTPro-Regular", "Avenir Next LT Pro";
+$presentation-heading-color: #00a3a6 !default;
+```
+
+
+
