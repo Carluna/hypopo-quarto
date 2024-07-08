@@ -6,7 +6,7 @@ format:
   revealjs:
     logo: images/Logo-INRAE_Transparent.png
     footer: "Ruben C. Kubina - 11.07.2024"
-    theme: mytheme.scss
+    theme: theme.scss
     slide-number: true
     controls: true
     output-file: index.html
