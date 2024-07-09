@@ -45,6 +45,8 @@ Name of the repository will be also in the domain of your published site.
 1. Way: Use git (you can prevent the upload of files using a `.gitignore` file)
 :::
 
+<!--  Check out: https://quarto.org/docs/authoring/diagrams.html for more information
+about flowcharts-->
 ```{mermaid}
 flowchart LR
  A[git init] --> B[git add .]
