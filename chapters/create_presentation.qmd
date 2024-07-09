@@ -15,6 +15,7 @@ format: revealjs
 ## Why a HTML presentation and not just PowerPoint?
 <hr>
 
+<!-- Incremenal list with a margin of 20px above  -->
 :::{style="margin-top:20px" .incremental}
 
   * Makes it easy to share: only a link to send!
@@ -32,8 +33,8 @@ format: revealjs
 * If not or if you want to use **VS Code**, **Jupyter** or **Text Editor** download the newest version  from the official [website](https://quarto.org/docs/get-started/).
 
 :::{style="margin-top: 55px; text-align: center;"}
+<!-- You can use Latex-Math by embedding the Latex math code in $$  -->
 $\rightarrow$ I will focus on R-Studio
-
 :::
 
 ## Create a new document
@@ -58,9 +59,12 @@ $\rightarrow$ I will focus on R-Studio
 
 Preamble defines format and other options for the output:
 
+<!-- With an r-stack you can stack contents and go through every fragment -->
 ::::{.r-stack}
 
 :::{}
+<!-- Here I add some code blocks to display -> note that the point before yaml is necessary
+so Quarto doesn't render the chunk! -->
 ```{.yaml}
 ---
 title: "Hypopo"
@@ -160,9 +164,10 @@ Content of slide 2
 ```{.markdown}
 ![Logo of INRAE](images/Logo-INRAE_Transparent.png)
 ```
-
+<!-- This might be a bit confusing, but the relative path to the image is actually not from this file, but from the index file! This is because we  include this quarto file we're in right now, into the index.qmd file -->
 ![Logo of INRAE](images/Logo-INRAE_Transparent.png){fig-align="left" width=25%}
 
+<!--  The three dots, separated with spaces are a pause. So you have to click on to see the next image -->
 . . .
 
 ```{.markdown}
@@ -175,11 +180,13 @@ Content of slide 2
 
 Caption in `[]`, relative path to figure in `()` and parameters in `{}` like `width`, `height` and [more](https://quarto.org/docs/authoring/figures.html)...
 
+
 ## Including figures from R code {{< iconify devicon:r >}}
 <hr>
 
 Code needs to be embedded in chunks 
-
+<!-- You can use the double bracktes {{}} around the syntax of the chunk if you want to display the whole chunk.
+But there is no syntax highlighting afterwards -->
 ```{{r}}
 library(ggplot2)
 x <- 1:10
@@ -203,6 +210,28 @@ ggplot() +
   geom_line(aes(x = x, y = y))  
 
 ```
+
+## Control code chunks
+<hr>
+
+Use cell options to control code output, figures, tables,...
+
+```{{r}}
+#| echo: false
+#| fig-cap: "Figure caption"
+#| fig-align: "center"
+#| out-height: "20cm"
+```
+
+:::{style="font-size: 30px;"}
+* `#| echo: false`: Include cell source code in rendered output
+* `#| fig-cap`: caption of figure
+* `#| fig-align`: alignment of figure
+* `#| out-height`: output height of figure
+
+[And many more options...](https://quarto.org/docs/reference/cells/cells-knitr.html)
+:::
+
 
 ## Save and read a plot as RDS
 <hr>
@@ -295,7 +324,7 @@ readRDS(file = "images/map_initKGE_Loire.RDS")
 
 :::{.column}
 * Render presentation directly in R-Studio
-* or run `quarto render myPresentation.qmd` in the command line
+* or run `quarto render index.qmd` in the command line
 :::
 
 ::::
@@ -307,3 +336,18 @@ Output: `index.html` and `index_files` $\rightarrow$ the presentation
 
 ![](images/screenshots/render_output.png){fig-align="center"}
 :::
+
+## Render presentation
+
+* The output of your presentation should be named `index.html`
+
+* If you want to name your Quarto file different, set the name of the output file in the preamble:
+
+
+```{.yaml code-line-numbers="5"}
+title: "Hypopo"
+author: "Ruben C. Kubina"
+format: 
+  revealjs:
+    output-file: index.html
+```

@@ -35,16 +35,16 @@ format:
 
 Create your own custom theme with `scss` and/or `css` rules!
 
-```{.yaml}
+```{.yaml code-line-numbers="5"}
 ---
 title: "Hypopo"
 format:
   revealjs: 
-    theme: mytheme.scss
+    theme: theme.scss
 ---
 ```
 
-```{.css filename='./mytheme.scss'}
+```{.css filename='./theme.scss'}
 /*-- scss:defaults --*/
 // fonts
 $font-family-sans-serif: "AvenirNextLTPro-Regular", "Avenir Next LT Pro";

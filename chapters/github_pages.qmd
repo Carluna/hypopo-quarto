@@ -15,6 +15,73 @@ format: revealjs
 ## GitHub Pages {{< iconify line-md:github-loop >}} 
 <hr>
 
-* Offers free hosting of websites
-* Easy to work together on Quarto file
-* Public repository needed: attention with confidential data, api keys…
+* Offers free hosting of static websites
+* Easy to work together on projects/presentations
+* Public repository needed if you do not have a premium account: attention with confidential data, api keys… {{< iconify line-md:alert-circle-loop >}} 
+* [GitHub Actions](https://quarto.org/docs/publishing/github-pages.html#github-action) gives possibility to render Quarto documents automatically after e.g. every commit 
+
+. . . 
+
+There are many other [alternatives](https://quarto.org/docs/publishing/) available!
+
+## Create a new GitHub repository
+<hr>
+
+::::{.columns}
+
+:::{.column}
+![](images/screenshots/new_repositories.png)
+:::
+
+:::{.column}
+![](images/screenshots/name_repository.png)
+:::
+
+::::
+
+Name of the repository will be also in the domain of your published site.
+
+## Fill your repository
+<hr>
+
+:::{style='font-size: 30px'}
+1. Way: Use git (you can prevent the upload of files using a `.gitignore` file)
+:::
+
+```{mermaid}
+flowchart LR
+ A[git init] --> B[git add .]
+  B --> C[git commit -m 'Initial commit']
+  C --> D[git branch -M main]
+  D --> E[git remote add origin UrlToYourRepository.git]
+  E --> F[git push origin main]
+```
+
+:::{style='font-size: 30px'}
+2. Way: manual upload of your files (in our case these needed are `images/`, `index_files/` and `index.html`)
+:::
+
+![](images/screenshots/upload_manually.png){width="60%" fig-align="center"}
+
+## Publish your page
+<hr>
+
+```{mermaid}
+flowchart LR
+ A[Settings of your repository] --> B[Pages]
+  B --> C[Select branch with index.html]
+```
+
+::::{.columns style='display: flex !important; height: 40%; font-size: 28px;'}
+
+:::{.column width="70%"}
+![](images/screenshots/publish_page.png){fig-align="center"}
+:::
+
+:::{.column width="30%" style='display: flex; justify-content: center; align-items: center;'}
+It will probably take about a minute for the page to be built and deployed.
+![](images/screenshots/page_published.png){fig-align="center"}
+:::
+
+::::
+
