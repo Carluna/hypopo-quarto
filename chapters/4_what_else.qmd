@@ -1,0 +1,103 @@
+
+---
+
+##  {#further-ressources data-menu-title="What else?" background-image="images/ae_light.png"}
+
+<div class="page-center">
+<div class="custom-subtitle"> What else? {{< iconify line-md:compass-loop >}}  </div>
+</div>
+<!--  This is a title page with a new layout. In this case I added the ae background
+and centered the subtitle -->
+---
+
+
+## Using leaflet
+<hr>
+
+```{r}
+#| out-width: "100%"
+library(leaflet)
+library(leafem)
+
+leaflet() |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  addPopups(
+    lat = 45.77864201354321,
+    lng = 4.875703855300546,
+    "Where we are!",
+    options = popupOptions(closeButton = FALSE)
+  ) |>
+  addHomeButton(
+    position = "topright",
+    add = T,
+    ext = c(4.875703855300546, 45.77864201354321),
+    group = "Back to INRAE"
+  ) |>
+  addMarkers(
+    lat = 45.77864201354321,
+    lng = 4.875703855300546,
+    popup = "Where we are!"
+  ) |>
+  addPopups(
+    lat = 48.00152622812801,
+    lng = 7.842766370914802,
+    "Where I come from!",
+    options = popupOptions(closeButton = FALSE)
+  ) |>
+  addMarkers(
+    lat = 48.00152622812801,
+    lng = 7.842766370914802,
+    popup = "Where I come from!"
+  ) |>
+  setView(
+    lat = 47.15736580850752,
+    lng = 6.109927426870963,
+    zoom = 7
+  )
+```
+
+## Using plotly
+<hr>
+
+```{r}
+library(plotly)
+library(ggplot2)
+
+df <- readRDS("images/goodFit_Loire.RDS")[[1]] |>
+  filter(code_bss == "03276X0009/P")
+
+plot <- ggplot() +
+  geom_line(data = df, aes(x = dttm, y = value, color = name)) +
+  scale_color_manual(values = c("J2000" = "blue", "Ref. Piezometer" = "red"), name = "") +
+  theme_minimal() +
+  labs(x = "Date", y = "SPLI (-)") +
+  theme(legend.position = "bottom") 
+
+ggplotly(plot, dynamicTicks = T) |>
+  layout(legend = list(x = 0.8, y = 0.9))
+```
+
+
+## Further Ressources
+<hr>
+<!--  To embed some links use [TextToDisplay](URL) -->
+* [The official Quarto documentation](https://quarto.org/docs/presentations/)
+
+* [R-Studio conference 2022](https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/auto-animate-1)
+
+* [Sam Csik - Styling Quarto websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) 
+
+* [The GitHub repository of this presentation](https://github.com/Carluna/hypopo-quarto)
+
+There's much more to discover: extensions, animations, transitions, tabsets, scrolling, ...
+
+
+---
+
+##  {#questions data-menu-title="Any questions?" background-image="images/ae_light.png"}
+
+<div class="page-center">
+<div class="custom-subtitle"> Thanks for your attention! Questions?  </div>
+</div>
+
+
