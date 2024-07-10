@@ -165,7 +165,7 @@ Content of slide 2
 <!-- This might be a bit confusing, but the relative path to the image is actually not from this file, but from the index file! This is because we  include this quarto file we're in right now, into the index.qmd file -->
 ![Logo of INRAE](images/Logo-INRAE_Transparent.png){fig-align="left" width=25%}
 
-<!--  The three dots, separated with spaces are a pause. So you have to click on to see the next image -->
+<!--  The three dots, separated with spaces are a pause. So you have to click to see the next image -->
 . . .
 
 ```{.markdown}
@@ -173,8 +173,6 @@ Content of slide 2
 ```
 
 ![](images/Logo-INRAE_Transparent.png){fig-align="right" width=10%}
-
-. . .
 
 Caption in `[]`, relative path to figure in `()` and parameters in `{}` like `width`, `height` and [more](https://quarto.org/docs/authoring/figures.html)...
 
@@ -219,6 +217,8 @@ Use cell options to control code output, figures, tables,...
 #| fig-cap: "Figure caption"
 #| fig-align: "center"
 #| out-height: "20cm"
+
+# Put your code here
 ```
 
 :::{style="font-size: 30px;"}
