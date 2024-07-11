@@ -1,5 +1,8 @@
-
 ---
+format: revealjs
+---
+
+
 
 ##  {#styling-a-quarto-document data-menu-title="Styling a Quarto document" background="#FAC748"}
 

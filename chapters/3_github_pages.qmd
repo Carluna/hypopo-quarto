@@ -1,3 +1,6 @@
+---
+format: revealjs
+---
 
 ---
 
@@ -46,8 +49,11 @@ Name of the repository will be also in the domain of your published site.
 :::
 
 <!--  Check out: https://quarto.org/docs/authoring/diagrams.html for more information
-about flowcharts-->
+about flowcharts. It is a bit weird with revealJS as ouput format, you have to install 
+Chromium for Quarto to be able to render the diagram to a png. As html output the text
+overflows the Boxes, depending on the size of the screen. -->
 ```{mermaid}
+%%| mermaid-format: png
 flowchart LR
  A[git init] --> B[git add .]
   B --> C[git commit -m 'Initial commit']
@@ -66,6 +72,7 @@ flowchart LR
 <hr>
 
 ```{mermaid}
+%%| mermaid-format: png
 flowchart LR
  A[Settings of your repository] --> B[Pages]
   B --> C[Select branch with index.html]

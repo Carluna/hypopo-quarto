@@ -1,3 +1,6 @@
+---
+format: revealjs
+---
 
 ---
 
@@ -336,7 +339,7 @@ Output: `index.html` and `index_files` $\rightarrow$ the presentation
 :::
 
 ## Render presentation
-
+<hr>
 * The output of your presentation should be named `index.html`
 
 * If you want to name your Quarto file different, set the name of the output file in the preamble:
@@ -352,3 +355,4 @@ format:
 ---
 ```
 
+---
