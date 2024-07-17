@@ -8,3 +8,5 @@ Some parts of the code are commented, so it's easier to understand some things I
 > Comments in Quarto are embedded in `<!-- -->`. If you are using R-Studio or VS Code with the Quarto extension, they should be highlighted as comments.
 
 If you use R-Studio to view the code, it can be helpful to use the `outline` function in the upper right corner of the editor. This makes it easy to switch between the different slides.
+
+The folder `template/` includes the skeleton of an empty presentation in the style of the Hypopo presentation you can use!
