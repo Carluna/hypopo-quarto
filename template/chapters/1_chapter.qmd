@@ -1,0 +1,18 @@
+---
+format: revealjs
+---
+
+---
+
+##  {#inrae-background data-menu-title="INRAE background" background-image="images/ae_light.png"}
+
+<div class="page-center">
+<div class="custom-subtitle"> INRAE background  </div>
+</div>
+
+
+# Normal chapter slide {background-image="images/ae_light.png"}
+
+## Slide 1 of chapter 1 {background-image="images/ae_light.png"}
+<hr>
+

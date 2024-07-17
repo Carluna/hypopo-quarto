@@ -1,0 +1,19 @@
+---
+format: revealjs
+---
+
+
+
+##  {#custom-chapter-slide data-menu-title="Custom chapter slide" background="#FAC748"}
+
+<div class="page-center">
+<div class="custom-subtitle"> This is a custom chapter slide  </div>
+</div>
+
+---
+
+## Slide 1 of chapter 2
+<hr>
+
+
+

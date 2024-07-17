@@ -1,0 +1,30 @@
+---
+title: "Quarto template"
+subtitle: "This is a subtitle"
+author: "Author"
+format: 
+  revealjs:
+    logo: images/Logo-INRAE_Transparent.png
+    footer: "Footer"
+    theme: theme.scss
+    slide-number: true
+    controls: true
+    output-file: index.html
+    chalkboard: true
+    code-line-numbers: false
+    mermaid:
+      theme: neutral
+lightbox: auto
+self-contained: false
+embed-resources: false
+---
+
+
+## Slide 1
+<hr>
+
+{{< include chapters/1_chapter.qmd >}}
+
+{{< include chapters/2_chapter.qmd >}}
+
+
